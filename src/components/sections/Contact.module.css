@@ -1,0 +1,41 @@
+.contact {
+  border-top: 1px solid var(--border);
+}
+
+.card {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card :global(.section-heading) {
+  margin-bottom: 1.75rem;
+}
+
+.card :global(.section-heading p) {
+  margin-inline: auto;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.links :global(.icon-btn.large) {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  border-radius: 12px;
+}
