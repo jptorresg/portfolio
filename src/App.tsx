@@ -36,8 +36,9 @@ function ScrollManager() {
 }
 
 function AppRouter() {
+  const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <ScrollManager />
       <SkipLink />
       <Navbar />

@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Juan Pablo Torres — Software Developer</title>
     <meta
@@ -12,13 +12,13 @@
     <meta name="author" content="Juan Pablo Torres" />
     <meta name="theme-color" content="#0f1117" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jptorresg.github.io/" />
+    <meta property="og:url" content="https://jptorresg.github.io/portfolio/" />
     <meta property="og:title" content="Juan Pablo Torres — Software Developer" />
     <meta
       property="og:description"
       content="Portafolio de Juan Pablo Torres, desarrollador de software y estudiante de Ingeniería en Sistemas y Ciencias de la Computación."
     />
-    <meta property="og:image" content="/og.png" />
+    <meta property="og:image" content="%BASE_URL%og.png" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -34,6 +34,17 @@
           var stored = localStorage.getItem('theme')
           var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
           document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {}
+      })()
+    </script>
+    <script>
+      ;(function () {
+        try {
+          var redirect = sessionStorage.redirect
+          if (redirect && redirect.indexOf(window.location.origin) === 0) {
+            sessionStorage.removeItem('redirect')
+            history.replaceState(null, '', redirect)
+          }
         } catch (e) {}
       })()
     </script>
